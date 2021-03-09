@@ -41,7 +41,7 @@ router.put("/:id", auth, async (req, res) => {
   if (!customer)
     return res
       .status(404)
-      .send("The customer with the given ID was not found.");
+      .send("未找到指定ID的用户.");
 
   res.send(customer);
 });
@@ -52,7 +52,7 @@ router.delete("/:id", auth, async (req, res) => {
   if (!customer)
     return res
       .status(404)
-      .send("The customer with the given ID was not found.");
+      .send("未找到指定ID的用户.");
 
   res.send(customer);
 });
@@ -63,7 +63,7 @@ router.get("/:id", auth, async (req, res) => {
   if (!customer)
     return res
       .status(404)
-      .send("The customer with the given ID was not found.");
+      .send("未找到指定ID的用户.");
 
   res.send(customer);
 });

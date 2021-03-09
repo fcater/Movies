@@ -8,7 +8,11 @@ const auth = require('../routes/auth');
 const returns = require('../routes/returns');
 const error = require('../middleware/error');
 
-module.exports = function(app) {
+module.exports = function (app) {
+  var bodyParser = require('body-parser');
+  app.use(bodyParser.json({ limit: '50mb' }));
+  app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
+  //设置传输文件的最大值为50mb
   app.use(express.json());
   app.use('/api/genres', genres);
   app.use('/api/customers', customers);
